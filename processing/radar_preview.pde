@@ -16,6 +16,7 @@ PFont orcFont;
 
 void setup() {
   size (1920, 1080); // Setting size to screen resolution to get best possible experience
+  fullScreen();
   smooth();
   myPort = new Serial(this, "COM7", 9600); // starts the serial communication (Depending on the port connected to arduino, We'll need to change it)
   
@@ -114,11 +115,11 @@ void drawText() { // draws the texts on the screen
   text("30cm", width-width*0.177, height-height*0.0833);
   text("40cm", width-width*0.0729, height-height*0.0833);
   textSize(40);
-  text("N_Tech ", width-width*0.875, height-height*0.0277);
+  text("Arduino Radar ", width-width*0.875, height-height*0.0277);
   text("Angle: " + iAngle +" ", width-width*0.48, height-height*0.0277);
   text("Distance: ", width-width*0.26, height-height*0.0277);
   if (iDistance<40) {
-    text("        " + iDistance +" cm", width-width*0.225, height-height*0.0277);
+    text("           " + iDistance +" cm", width-width*0.225, height-height*0.0277);
   }
   textSize(25);
   fill(98, 245, 60);
